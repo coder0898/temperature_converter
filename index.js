@@ -13,7 +13,7 @@ function ConvertTemperature(inputTemperature, firstScale, secondScale) {
   switch (firstScale) {
     case "celsius":
       if (secondScale == "fahrenheit") {
-        convertResult += inputTemperature * constantValue + 32;
+        convertResult += Math.floor(inputTemperature * constantValue + 32);
         CardChange.style.backgroundColor = "#FDEE00";
         CardChange.style.color = "#FFFF";
         CardContainer.innerHTML = `<h4>${secondScale}</h4>
@@ -36,13 +36,17 @@ function ConvertTemperature(inputTemperature, firstScale, secondScale) {
 
     case "fahrenheit":
       if (secondScale == "celsius") {
-        convertResult += (inputTemperature - 32) * (1 / constantValue);
+        convertResult += Math.floor(
+          (inputTemperature - 32) * (1 / constantValue)
+        );
         CardChange.style.backgroundColor = "#318CE7";
         CardChange.style.color = "#FFFF";
         CardContainer.innerHTML = `<h4>${secondScale}</h4>
         <p>${convertResult} C</p>`;
       } else if (secondScale == "kelvin") {
-        convertResult += (inputTemperature + 459.67) * (1 / constantValue);
+        convertResult += Math.floor(
+          (inputTemperature + 459.67) * (1 / constantValue)
+        );
         CardChange.style.backgroundColor = "#FF0800";
         CardChange.style.color = "#FFFF";
         CardContainer.innerHTML = `<h4>${secondScale}</h4>
@@ -65,7 +69,7 @@ function ConvertTemperature(inputTemperature, firstScale, secondScale) {
         CardContainer.innerHTML = `<h4>${secondScale}</h4>
         <p>${convertResult} C</p>`;
       } else if (secondScale == "fahrenheit") {
-        convertResult += inputTemperature * constantValue - 459.67;
+        convertResult += Math.floor(inputTemperature * constantValue - 459.67);
         CardChange.style.backgroundColor = "#FDEE00";
         CardChange.style.color = "#FFFF";
         CardContainer.innerHTML = `<h4>${secondScale}</h4>
