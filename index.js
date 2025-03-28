@@ -26,7 +26,7 @@ function ConvertTemperature(inputTemperature, firstScale, secondScale) {
         <p>${convertResult} K</p>`;
       } else {
         convertResult += inputTemperature;
-        CardChange.style.backgroundColor = "#318CE7";
+        CardChange.style.backgroundColor = "#2196F3";
         CardChange.style.color = "#FFFF";
         CardContainer.innerHTML = `<h4>${secondScale}</h4>
         <p>${convertResult} C</p>`;
@@ -39,7 +39,7 @@ function ConvertTemperature(inputTemperature, firstScale, secondScale) {
         convertResult += Math.floor(
           (inputTemperature - 32) * (1 / constantValue)
         );
-        CardChange.style.backgroundColor = "#318CE7";
+        CardChange.style.backgroundColor = "#2196F3";
         CardChange.style.color = "#FFFF";
         CardContainer.innerHTML = `<h4>${secondScale}</h4>
         <p>${convertResult} C</p>`;
@@ -64,7 +64,7 @@ function ConvertTemperature(inputTemperature, firstScale, secondScale) {
     case "kelvin":
       if (secondScale == "celsius") {
         convertResult += inputTemperature - 273.15;
-        CardChange.style.backgroundColor = "#318CE7";
+        CardChange.style.backgroundColor = "#2196F3";
         CardChange.style.color = "#FFFF";
         CardContainer.innerHTML = `<h4>${secondScale}</h4>
         <p>${convertResult} C</p>`;
